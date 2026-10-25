@@ -334,6 +334,45 @@ body{font-size:16px}
 .tok-note{font-size:14px;line-height:1.5;color:var(--ink2);margin:0}
 @media (max-width:640px){.tok{padding:18px 14px 14px}.tok-bar{gap:3px}.seg{height:26px}.seg em{font-size:10px}}
 @media (prefers-reduced-motion:reduce){.seg{animation:none}}
+.pk-foot{font-size:13px;line-height:1.5;color:var(--ink3);margin:0}
+.pk-foot b{color:#ffc451;font-weight:700}
+.tick.mini span{visibility:hidden}
+.tick.mini::before{height:7px;opacity:.6}
+.pk-bar.many .pk-seg{font-size:11px;border-radius:7px}
+.pk-bar.many{gap:2px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.earn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ecard{padding:20px;display:grid;gap:10px;align-content:start}
+.ecard h3{font-size:18px;font-weight:650;margin:0;letter-spacing:-.01em}
+.ecard p{font-size:14.5px;line-height:1.5;color:var(--ink2);margin:0}
+.e-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;color:var(--on-acc);background:linear-gradient(135deg,var(--acc2),var(--acc));box-shadow:0 0 22px -6px rgba(75,224,74,.8)}
+.net{padding:22px;display:grid;gap:14px}
+.net-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;align-items:baseline}
+.net-h .tl{font-weight:650}
+.net-h .small{font-size:13px;color:var(--ink3)}
+.net-svg{width:100%;max-width:640px;height:auto;justify-self:center;overflow:visible}
+.net-svg .ln line{stroke:rgba(75,224,74,.35);stroke-width:2;stroke-dasharray:6 6;animation:dash 1.4s linear infinite}
+.net-svg .ln line.l2{stroke:rgba(156,134,240,.35);stroke-width:1.5}
+@keyframes dash{to{stroke-dashoffset:-24}}
+.nd{stroke-width:2}
+.n1{fill:#16231a;stroke:var(--acc)}
+.n2{fill:#1a1726;stroke:var(--violet)}
+.me{fill:var(--acc)}
+.me-ring{fill:none;stroke:var(--acc);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+.me-t{fill:var(--on-acc);font-size:22px;font-weight:800;text-anchor:middle;font-family:inherit}
+.cap{fill:var(--ink3);font-size:15px;text-anchor:middle;font-family:inherit}
+.coin{fill:#f2dc5d;filter:drop-shadow(0 0 6px #f2dc5d);opacity:0;animation:flow 2.6s cubic-bezier(.4,0,.6,1) infinite;animation-delay:var(--t)}
+.coin.c2{fill:#c9b8ff;filter:drop-shadow(0 0 5px #9c86f0)}
+@keyframes flow{0%{transform:translate(var(--a),var(--b));opacity:0}15%,80%{opacity:1}100%{transform:translate(var(--c),var(--d));opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(75,224,74,.35);background:rgba(75,224,74,.08);color:var(--ink);animation:chip 6s ease-in-out infinite;animation-delay:calc(var(--i) * 1s)}
+@keyframes chip{0%,12%,100%{background:rgba(75,224,74,.08);box-shadow:none}5%{background:rgba(75,224,74,.28);box-shadow:0 0 18px -4px rgba(75,224,74,.9)}}
+.earn-out{font-size:16px;line-height:1.55;color:var(--ink2);max-width:66ch;margin:0}
+.muted-s{display:block;margin-top:8px;font-size:12.5px;color:var(--ink3)}
+@media (max-width:820px){.earn-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.net{padding:16px 12px}.cap{font-size:17px}}
+@media (prefers-reduced-motion:reduce){.coin,.me-ring,.chips span,.net-svg .ln line{animation:none}}
 .advice{max-width:62ch;font-size:14px;line-height:1.5;color:var(--ink3);padding:12px 16px;border-radius:14px;border:.5px solid var(--glass-edge);background:rgba(255,255,255,.03)}
 .picker{display:flex;flex-direction:column;gap:22px}
 .pk-title{font-size:clamp(30px,4.4vw,48px)}
@@ -645,16 +684,17 @@ body{font-size:16px}
       <p class="tok-leg"><i class="lg y"></i>клиффхэнгер — конец доли <i class="lg p"></i>конец бесплатной части</p>
       <p class="tok-note">Делите так, чтобы за каждую часть было честно отдать около 50 ₽ — столько долей и ставьте. Каждая доля по-прежнему заканчивается клиффхэнгером: это главное правило.</p>
     </div>
-    <p class="advice">Для романа обычного объёма мы советуем четыре этапа: бесплатное начало и три доли. Большую книгу делите на больше долей, держа каждую около 50 ₽. Это рекомендация, а не запрет.</p>
+    <p class="advice">На Shagee выходят тексты любого объёма и жанра — от рассказа до многотомного цикла. Число этапов подбирайте под свою историю: короткой хватит четырёх, большой — двадцати и больше. Ориентир один: около 50 ₽ за долю и клиффхэнгер в конце каждой.</p>
     <div class="glass picker">
       <h2 class="pk-title">Сколько этапов в книге</h2>
-      <div class="slider" id="slider" role="slider" tabindex="0" aria-label="Число этапов" aria-valuemin="2" aria-valuemax="6" aria-valuenow="4">
+      <div class="slider" id="slider" role="slider" tabindex="0" aria-label="Число этапов" aria-valuemin="2" aria-valuemax="20" aria-valuenow="4">
         <div class="sl-track"><div class="sl-fill" id="slFill"></div></div>
         <div class="sl-ticks" id="slTicks"></div>
         <div class="sl-thumb" id="slThumb"><span id="slVal">4</span></div>
       </div>
       <div class="pk-bar" id="pkbar"></div>
       <p class="pk-status" id="pkstatus" aria-live="polite"></p>
+      <p class="pk-foot"><b>★ ХИТ</b> — среди коротких произведений четыре этапа дают максимальную конверсию: новые части выходят одна за другой, и читатель возвращается за следующей.</p>
     </div>
   </section>
 
@@ -704,6 +744,25 @@ body{font-size:16px}
     </details>
   </section>
 
+  <section id="earn">
+    <div class="head">
+      <span class="eyebrow">Почему Shagee</span>
+      <h2>Платформа, которая зарабатывает <span class="grad">вместе с вами</span></h2>
+      <p class="lead">Shagee создан, чтобы любой автор — от первого рассказа до большой серии — мог прийти и начать зарабатывать. Мы растём, только когда растёте вы.</p>
+    </div>
+    <div class="earn-grid">
+      <div class="glass ecard"><span class="e-ic">⟡</span><h3>Шаги — валюта платформы</h3><p>Читатель получает шаги не только за деньги: за просмотр рекламы и игровые задания. Мы постоянно добавляем новые — у читателя всегда есть чем открыть следующую долю, а у вас всегда есть продажа.</p></div>
+      <div class="glass ecard"><span class="e-ic">↗</span><h3>Рефералы без вложений</h3><p>Зовите читателей по своей ссылке. Вам идут роялти со всего, что они делают на площадке, — даже небольшие доли с просмотренной рекламы.</p></div>
+      <div class="glass ecard"><span class="e-ic">✦</span><h3>Сеть растёт — доход растёт</h3><p>Ваши читатели приводят друзей — вы получаете долю и с них. Мы бустим эту систему, чтобы приглашать было выгодно каждому.</p></div>
+    </div>
+    <div class="glass net anim" role="img" aria-label="Схема: друзья приводят читателей, читатели — к вам; роялти стекаются к автору">
+      <div class="net-h"><span class="tl">Как к вам стекаются роялти</span><span class="small">с каждого действия приглашённых читателей</span></div>
+      <svg class="net-svg" viewBox="0 0 520 320" aria-hidden="true"><g class="ln"><line x1="140" y1="80" x2="260" y2="150"/><line class="l2" x1="36" y1="40" x2="140" y2="80"/><line class="l2" x1="36" y1="115" x2="140" y2="80"/><line x1="140" y1="220" x2="260" y2="150"/><line class="l2" x1="36" y1="185" x2="140" y2="220"/><line class="l2" x1="36" y1="260" x2="140" y2="220"/><line x1="380" y1="80" x2="260" y2="150"/><line class="l2" x1="484" y1="40" x2="380" y2="80"/><line class="l2" x1="484" y1="115" x2="380" y2="80"/><line x1="380" y1="220" x2="260" y2="150"/><line class="l2" x1="484" y1="185" x2="380" y2="220"/><line class="l2" x1="484" y1="260" x2="380" y2="220"/></g><circle class="coin c1" r="7" style="--a:140px;--b:80px;--c:260px;--d:150px;--t:0.00s"/><circle class="coin c2" r="5" style="--a:36px;--b:40px;--c:140px;--d:80px;--t:0.00s"/><circle class="coin c2" r="5" style="--a:36px;--b:115px;--c:140px;--d:80px;--t:0.37s"/><circle class="coin c1" r="7" style="--a:140px;--b:220px;--c:260px;--d:150px;--t:0.55s"/><circle class="coin c2" r="5" style="--a:36px;--b:185px;--c:140px;--d:220px;--t:0.74s"/><circle class="coin c2" r="5" style="--a:36px;--b:260px;--c:140px;--d:220px;--t:1.11s"/><circle class="coin c1" r="7" style="--a:380px;--b:80px;--c:260px;--d:150px;--t:1.10s"/><circle class="coin c2" r="5" style="--a:484px;--b:40px;--c:380px;--d:80px;--t:1.48s"/><circle class="coin c2" r="5" style="--a:484px;--b:115px;--c:380px;--d:80px;--t:1.85s"/><circle class="coin c1" r="7" style="--a:380px;--b:220px;--c:260px;--d:150px;--t:1.65s"/><circle class="coin c2" r="5" style="--a:484px;--b:185px;--c:380px;--d:220px;--t:2.22s"/><circle class="coin c2" r="5" style="--a:484px;--b:260px;--c:380px;--d:220px;--t:2.59s"/><circle class="nd n2" cx="36" cy="40" r="13"/><circle class="nd n2" cx="36" cy="115" r="13"/><circle class="nd n1" cx="140" cy="80" r="20"/><circle class="nd n2" cx="36" cy="185" r="13"/><circle class="nd n2" cx="36" cy="260" r="13"/><circle class="nd n1" cx="140" cy="220" r="20"/><circle class="nd n2" cx="484" cy="40" r="13"/><circle class="nd n2" cx="484" cy="115" r="13"/><circle class="nd n1" cx="380" cy="80" r="20"/><circle class="nd n2" cx="484" cy="185" r="13"/><circle class="nd n2" cx="484" cy="260" r="13"/><circle class="nd n1" cx="380" cy="220" r="20"/><circle class="me-ring" cx="260" cy="150" r="38"/><circle class="me" cx="260" cy="150" r="34"/><text class="me-t" x="260" y="157">Вы</text><text class="cap" x="36" y="306">друзья</text><text class="cap" x="140" y="306">читатели</text><text class="cap" x="380" y="306">читатели</text><text class="cap" x="484" y="306">друзья</text></svg>
+      <div class="chips"><span style="--i:0">покупка ваших долей</span><span style="--i:1">пополнение кабинета</span><span style="--i:2">донаты</span><span style="--i:3">тикеты</span><span style="--i:4">чужие книги</span><span style="--i:5">просмотр рекламы</span></div>
+    </div>
+    <p class="earn-out">Shagee поощряет всех, кто помогает площадке расти: вы приносите истории и читателей — платформа делится доходом. Токеномику мы развиваем дальше, в сторону роста капитала участников. <span class="muted-s">Ставки роялти и уровни реферальной программы — в кабинете автора.</span></p>
+  </section>
+
   <section id="course">
     <div class="head">
       <h2>Чек-лист перед подключением</h2>
@@ -744,7 +803,8 @@ body{font-size:16px}
   setTW(); window.addEventListener('resize', setTW);
 
   /* magnetic slider */
-  var MIN = 2, MAX = 6, val = 4;
+  var MIN = 2, MAX = 20, val = 4, LAB = {2:1,4:1,6:1,10:1,15:1,20:1};
+  function lbl(v) { return v >= MAX ? MAX + '+' : '' + v; }
   var slider = document.getElementById('slider'), thumb = document.getElementById('slThumb'), fill = document.getElementById('slFill');
   var ticksEl = document.getElementById('slTicks'), valEl = document.getElementById('slVal');
   var bar = document.getElementById('pkbar'), st = document.getElementById('pkstatus');
@@ -753,7 +813,7 @@ body{font-size:16px}
   for (var n = MIN; n <= MAX; n++) {
     var t = document.createElement('button'); t.type = 'button'; t.className = 'tick'; t.dataset.v = n;
     t.style.left = ((n - MIN) / (MAX - MIN) * 100) + '%';
-    t.innerHTML = '<span>' + n + '</span>'; t.setAttribute('aria-label', n + ' этапа');
+    t.innerHTML = '<span>' + lbl(n) + '</span>'; t.setAttribute('aria-label', lbl(n) + ' этапов'); if (!LAB[n]) t.classList.add('mini');
     ticksEl.appendChild(t); ticks.push(t);
     if (n === 4) {
       var h = document.createElement('em'); h.className = 'hit'; h.style.left = t.style.left; h.setAttribute('aria-hidden', 'true');
@@ -770,24 +830,27 @@ body{font-size:16px}
   }
   function pxFor(v) { return (v - MIN) / (MAX - MIN) * W; }
   function drawBar(n) {
-    bar.innerHTML = '';
+    bar.innerHTML = ''; bar.classList.toggle('many', n > 6);
     for (var i = 0; i < n; i++) {
       var d = document.createElement('div');
       d.className = 'pk-seg' + (i === 0 ? ' free' : '');
-      d.style.animationDelay = (i * 0.05) + 's';
+      d.style.animationDelay = (i * (n > 6 ? 0.02 : 0.05)) + 's';
       if (i > 0) d.style.setProperty('--c', colors[(i - 1) % colors.length]);
-      d.textContent = i === 0 ? 'Бесплатно' : (i === n - 1 ? 'Финал' : 'Доля ' + i);
+      d.textContent = n > 6 ? (n > 12 ? '' : (i === 0 ? '0 ₽' : i)) : (i === 0 ? 'Бесплатно' : (i === n - 1 ? 'Финал' : 'Доля ' + i));
       bar.appendChild(d);
     }
-    var c = n - 1;
-    if (n === 4) { st.className = 'pk-status ok'; st.textContent = 'Клиффхэнгеров: 3. Рекомендуем: бесплатное начало и три доли.'; }
-    else if (n < 4) { st.className = 'pk-status warn'; st.textContent = 'Клиффхэнгеров: ' + c + '. Модерацию пройдёт, но с меньшим числом этапов конверсия обычно ниже.'; }
-    else { st.className = 'pk-status warn'; st.textContent = 'Клиффхэнгеров: ' + c + '. Можно, но больше четырёх этапов нежелательно: максимальную конверсию не гарантируем.'; }
+    var c = n - 1, sum = c * 50, more = n >= MAX ? ' и больше' : '';
+    st.className = 'pk-status ok';
+    if (n === 4) st.textContent = '★ ХИТ для коротких историй: бесплатное начало и три доли · ≈ 150 ₽ за книгу.';
+    else if (n < 4) st.textContent = 'Долей: ' + c + ' · ≈ ' + sum + ' ₽. Для совсем коротких текстов: меньше точек покупки — меньше чеков.';
+    else if (n <= 9) st.textContent = 'Долей: ' + c + ' · ≈ ' + sum + ' ₽ за книгу. Роман среднего объёма, каждая доля — на клиффхэнгере.';
+    else if (n < MAX) st.textContent = 'Долей: ' + c + ' · ≈ ' + sum + ' ₽ за книгу. Большая история: новые части держат читателя рядом.';
+    else st.textContent = 'Долей: ' + c + more + ' · от ' + sum + ' ₽. Для циклов и сериалов, которые выходят частями.';
   }
   function setVal(v, snap) {
     v = Math.max(MIN, Math.min(MAX, v));
     var changed = v !== val; val = v;
-    valEl.textContent = v; slider.setAttribute('aria-valuenow', v);
+    valEl.textContent = lbl(v); slider.setAttribute('aria-valuenow', v);
     ticks.forEach(function (t) { t.classList.toggle('on', +t.dataset.v === v); });
     place(pxFor(v), snap);
     if (changed || !bar.children.length) drawBar(v);
@@ -801,7 +864,7 @@ body{font-size:16px}
     if (!raf) raf = requestAnimationFrame(function () {
       raf = 0; var px = xToPx(lastX); place(px, false);
       var v = Math.round(px / W * (MAX - MIN)) + MIN;
-      if (v !== val) { val = v; valEl.textContent = v; ticks.forEach(function (t) { t.classList.toggle('on', +t.dataset.v === v); }); drawBar(v); slider.setAttribute('aria-valuenow', v); }
+      if (v !== val) { val = v; valEl.textContent = lbl(v); ticks.forEach(function (t) { t.classList.toggle('on', +t.dataset.v === v); }); drawBar(v); slider.setAttribute('aria-valuenow', v); }
     });
   }
   function onUp() { if (!dragging) return; dragging = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } slider.classList.remove('drag'); var v = Math.round(xToPx(lastX) / W * (MAX - MIN)) + MIN; val = -1; setVal(v, true); }
