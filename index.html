@@ -253,7 +253,7 @@ body{font-size:16px}
 .buy-wrap.paid .au-in{animation:auIn 3.2s ease 1.05s forwards}
 .buy-wrap.paid .au-box{animation:plop .45s cubic-bezier(.34,1.56,.64,1) 1.05s}
 @keyframes auPop{0%{opacity:0;transform:translate(-50%,6px) scale(.9)}12%,78%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-10px) scale(.96)}}
-@keyframes flyUp{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}30%{opacity:1;transform:translate(-50%,-90%) scale(1.45)}55%{opacity:1;transform:translate(-50%,-120%) scale(1.25)}100%{opacity:0;transform:translate(-10%,-330%) scale(.35)}}
+@keyframes flyUp{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}30%{opacity:1;transform:translate(-50%,calc(-50% - 22px)) scale(1.45)}50%{opacity:1;transform:translate(-50%,calc(-50% - 26px)) scale(1.25)}88%{opacity:1;transform:translate(calc(-50% + var(--fx,0px)),calc(-50% + var(--fy,-80px))) scale(.55)}100%{opacity:0;transform:translate(calc(-50% + var(--fx,0px)),calc(-50% + var(--fy,-80px))) scale(.3)}}
 @keyframes auIn{0%{opacity:0;transform:translateY(-6px)}12%,60%{opacity:1;transform:none}100%{opacity:0}}
 @keyframes plop{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.buy-wrap.paid .author-pop{opacity:1;transform:translate(-50%,0)}}
@@ -313,6 +313,27 @@ body{font-size:16px}
 @keyframes mok{0%,10%{background:rgba(255,255,255,.08);color:var(--ink2);transform:scale(1)}16%{transform:scale(1.25)}22%,85%{background:var(--m-laugh);color:#06130d;transform:scale(1)}100%{background:rgba(255,255,255,.08);color:var(--ink2)}}
 @keyframes mglow{0%,12%{box-shadow:none;border-color:var(--glass-edge)}22%,85%{box-shadow:0 0 30px -6px var(--m-laugh);border-color:rgba(111,214,177,.6)}100%{box-shadow:none}}
 /* advice + picker */
+.head .txt.muted{font-size:13px;line-height:1.5;color:var(--ink3);max-width:60ch}
+.tok{margin:26px 0 0;padding:22px 22px 18px;display:grid;gap:16px}
+.tok-h{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.tok-h h3{font-size:clamp(17px,2vw,21px);font-weight:600;letter-spacing:-.01em;margin:0}
+.tok-badge{font-weight:800;font-size:14px;color:var(--on-acc);background:linear-gradient(100deg,var(--acc),var(--acc2));padding:5px 12px;border-radius:999px;box-shadow:0 0 22px -6px rgba(75,224,74,.8)}
+.tok-row{display:grid;gap:7px}
+.tok-meta{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink3)}
+.tok-meta b{color:var(--ink);font-weight:600}
+.tok-bar{display:flex;gap:4px;width:calc(var(--n) / 8 * 100%)}
+.seg{flex:1;position:relative;height:30px;border-radius:8px;background:linear-gradient(135deg,rgba(75,224,74,.85),rgba(168,232,78,.75));display:flex;align-items:center;justify-content:center;transform-origin:left center;animation:segIn 6.5s cubic-bezier(.2,.8,.2,1) infinite;animation-delay:calc(var(--i) * .22s)}
+.seg::after{content:"";position:absolute;right:-3px;top:-6px;width:2px;height:42px;border-radius:2px;background:#f2dc5d;box-shadow:0 0 8px #f2dc5d;opacity:.9}
+.seg.free{background:rgba(255,255,255,.08)}
+.seg.free::after{background:#ff5c82;box-shadow:0 0 8px #ff5c82}
+.seg:last-child::after{display:none}
+.seg em{font-style:normal;font-size:11px;font-weight:800;color:var(--on-acc);white-space:nowrap}
+.seg.free em{color:var(--ink3)}
+@keyframes segIn{0%{transform:scaleX(0);opacity:0}9%{transform:scaleX(1.06);opacity:1}13%,86%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+.tok-leg{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:12px;color:var(--ink3);margin:0}.lg{display:inline-block;width:3px;height:14px;border-radius:2px;margin-left:6px}.lg.y{background:#f2dc5d;box-shadow:0 0 6px #f2dc5d;margin-left:0}.lg.p{background:#ff5c82;box-shadow:0 0 6px #ff5c82}
+.tok-note{font-size:14px;line-height:1.5;color:var(--ink2);margin:0}
+@media (max-width:640px){.tok{padding:18px 14px 14px}.tok-bar{gap:3px}.seg{height:26px}.seg em{font-size:10px}}
+@media (prefers-reduced-motion:reduce){.seg{animation:none}}
 .advice{max-width:62ch;font-size:14px;line-height:1.5;color:var(--ink3);padding:12px 16px;border-radius:14px;border:.5px solid var(--glass-edge);background:rgba(255,255,255,.03)}
 .picker{display:flex;flex-direction:column;gap:22px}
 .pk-title{font-size:clamp(30px,4.4vw,48px)}
@@ -543,7 +564,7 @@ body{font-size:16px}
     <div class="head">
       <h2>Наличие клиффхэнгеров</h2>
       <p class="lead"><b class="term">Клиффхэнгер</b> — приём, когда сцена обрывается на пике напряжения, а ответа читатель ещё не знает. Каждый клиффхэнгер становится концом доли.</p>
-      <p class="txt">Мы рекомендуем минимум три клиффхэнгера: так покупка дробится на небольшие чеки, а читатель подсаживается на историю постепенно — вход мягче и плавнее. Но вы можете делать и меньше, на своё усмотрение. Для подключения долей достаточно одного.</p>
+      <p class="txt muted">Мы рекомендуем минимум три клиффхэнгера: так покупка дробится на небольшие чеки, а читатель подсаживается на историю постепенно — вход мягче и плавнее. Но вы можете делать и меньше, на своё усмотрение. Для подключения долей достаточно одного.</p>
     </div>
 
     <div class="glass curve anim" role="img" aria-label="График напряжения сюжета: обрывы стоят на пиках, а не в спокойных местах">
@@ -616,8 +637,15 @@ body{font-size:16px}
     <div class="head">
       <h2>Вы сами решаете, где делить</h2>
       <p class="lead">Места деления выбираете вы — это гибко.</p>
-      <p class="advice">Мы советуем выбирать четыре этапа: бесплатное начало и три доли. Больше четырёх нежелательно, хотя всё зависит от вашего жанра и подачи. Это наша рекомендация, а не запрет.</p>
     </div>
+    <div class="glass tok anim" id="tok" role="img" aria-label="Одна доля стоит около 50 рублей: короткая книга — 3 доли, длинная — 7 долей">
+      <div class="tok-h"><span class="tok-badge">1 доля ≈ 50 ₽</span><h3>Книга длиннее — долей больше, цена доли та же</h3></div>
+      <div class="tok-row"><div class="tok-meta"><span>Повесть · ~150 стр.</span><b>3 доли · 150 ₽</b></div><div class="tok-bar" style="--n:4"><span class="seg free" style="--i:0"><em>0 ₽</em></span><span class="seg" style="--i:1"><em>50 ₽</em></span><span class="seg" style="--i:2"><em>50 ₽</em></span><span class="seg" style="--i:3"><em>50 ₽</em></span></div></div>
+      <div class="tok-row"><div class="tok-meta"><span>Роман · ~450 стр.</span><b>7 доли · 350 ₽</b></div><div class="tok-bar" style="--n:8"><span class="seg free" style="--i:0"><em>0 ₽</em></span><span class="seg" style="--i:1"><em>50 ₽</em></span><span class="seg" style="--i:2"><em>50 ₽</em></span><span class="seg" style="--i:3"><em>50 ₽</em></span><span class="seg" style="--i:4"><em>50 ₽</em></span><span class="seg" style="--i:5"><em>50 ₽</em></span><span class="seg" style="--i:6"><em>50 ₽</em></span><span class="seg" style="--i:7"><em>50 ₽</em></span></div></div>
+      <p class="tok-leg"><i class="lg y"></i>клиффхэнгер — конец доли <i class="lg p"></i>конец бесплатной части</p>
+      <p class="tok-note">Делите так, чтобы за каждую часть было честно отдать около 50 ₽ — столько долей и ставьте. Каждая доля по-прежнему заканчивается клиффхэнгером: это главное правило.</p>
+    </div>
+    <p class="advice">Для романа обычного объёма мы советуем четыре этапа: бесплатное начало и три доли. Большую книгу делите на больше долей, держа каждую около 50 ₽. Это рекомендация, а не запрет.</p>
     <div class="glass picker">
       <h2 class="pk-title">Сколько этапов в книге</h2>
       <div class="slider" id="slider" role="slider" tabindex="0" aria-label="Число этапов" aria-valuemin="2" aria-valuemax="6" aria-valuenow="4">
@@ -805,7 +833,12 @@ body{font-size:16px}
     if (busy) return; busy = true; btn.parentNode.classList.add('busy');
     btn.classList.add('loading'); btn.setAttribute('aria-label', 'Оплата…');
     setTimeout(function () {
-      btn.classList.remove('loading'); btn.classList.add('done'); btn.parentNode.classList.add('paid'); btn.setAttribute('aria-label', 'Оплачено');
+      btn.classList.remove('loading'); btn.classList.add('done');
+      var wrap = btn.parentNode, pop = wrap.querySelector('.author-pop'), fl = wrap.querySelector('.fly');
+      if (pop && fl) { var pr = pop.getBoundingClientRect(), fr = fl.getBoundingClientRect();
+        wrap.style.setProperty('--fx', Math.round(pr.left + pr.width / 2 - (fr.left + fr.width / 2)) + 'px');
+        wrap.style.setProperty('--fy', Math.round(pr.top + pr.height / 2 - 6 - (fr.top + fr.height / 2)) + 'px'); }
+      wrap.classList.add('paid'); btn.setAttribute('aria-label', 'Оплачено');
       rw.classList.add('open');
       setTimeout(function () {
         rw.classList.remove('open'); btn.classList.remove('done'); btn.setAttribute('aria-label', 'Продолжить за 49 рублей'); busy = false; btn.parentNode.classList.remove('busy'); btn.parentNode.classList.remove('paid');
