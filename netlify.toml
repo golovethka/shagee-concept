@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "http://shagee-concept.netlify.app/*"
+  to = "https://shagee-concept.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
