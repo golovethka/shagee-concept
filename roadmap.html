@@ -271,6 +271,102 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 @keyframes okd{0%,72%{stroke-dashoffset:16}76%,100%{stroke-dashoffset:0}}
 .ai .meter i{animation:meter4 10s ease-in-out infinite!important}
 @keyframes meter4{0%,58%{transform:scaleX(.22)}66%,92%{transform:scaleX(.86)}100%{transform:scaleX(.22)}}
+
+/* v5 — layout col cards */
+.card.col{grid-template-columns:minmax(0,1fr)}
+.card.col .viz{min-height:0}
+#s3 .vphone{min-height:340px}
+/* s5 big cliff */
+.cfhead.big{flex-direction:column;align-items:flex-start;gap:4px}
+.cfhead.big .cf3d{width:clamp(220px,30vw,320px);height:clamp(118px,16vw,171px);perspective:700px;margin:6px 0 0 6px}
+.cfhead.big .cfword{font-size:clamp(48px,6.4vw,72px)}
+.cfrot .l1{transform:translateZ(-10px)!important}
+.cases2{position:absolute;right:16px;top:12px;display:flex;align-items:center;gap:10px;font:600 12px var(--f-body);color:var(--ink2)}
+.cases2 .cases{position:static}
+.cfm{animation:cfm 10s cubic-bezier(.5,0,.3,1) infinite}
+@keyframes cfm{0%,26%{opacity:0;transform:translate(100px,29px)}28%{opacity:1;transform:translate(100px,29px)}32%{transform:translate(165px,64px)}36%{transform:translate(245px,-4px)}40%{transform:translate(315px,36px)}44%{transform:translate(400px,4px)}50%,92%{opacity:1;transform:translate(214px,-10px)}96%,100%{opacity:0;transform:translate(214px,-10px)}}
+.aim{animation:aim5 10s cubic-bezier(.2,.8,.2,1) infinite!important}
+@keyframes aim5{0%,49%{opacity:0;transform:scale(2.6) rotate(-40deg);filter:blur(6px)}55%{opacity:1;transform:scale(1.15) rotate(0);filter:blur(0)}59%{opacity:1;transform:scale(.62) rotate(45deg)}62%,100%{opacity:0;transform:scale(.62) rotate(45deg)}}
+.ai .best{animation:best5 10s infinite!important}
+@keyframes best5{0%,58%{opacity:0;transform:scale(.3)}60%{opacity:1;transform:scale(1.4)}62%,90%{opacity:1;transform:scale(1)}88%{transform:scale(1.5)}94%,100%{opacity:0;transform:scale(1)}}
+.tick{animation:tick5 10s infinite!important}
+@keyframes tick5{0%,60%{opacity:0}62%,90%{opacity:1}94%,100%{opacity:0}}
+.pay{animation:pay5 10s cubic-bezier(.34,1.3,.64,1) infinite!important}
+@keyframes pay5{0%,62%{opacity:0;transform:scale(.2)}66%,84%{opacity:1;transform:scale(1)}90%{opacity:.9;transform:scale(.04)}91%,100%{opacity:0;transform:scale(0)}}
+.pay .lk .sh{animation:shut5 10s infinite!important}
+@keyframes shut5{0%,67%{transform:translateY(-3px) rotate(-22deg)}71%,100%{transform:translateY(0) rotate(0)}}
+.pay .lk{animation:lkf5 10s infinite!important}
+@keyframes lkf5{0%,73%{opacity:1}75%,100%{opacity:0}}
+.pay .ok{animation:ok5 10s infinite!important}
+@keyframes ok5{0%,74%{stroke-dashoffset:16}78%,100%{stroke-dashoffset:0}}
+.ai .meter i{animation:meter5 10s ease-in-out infinite!important}
+@keyframes meter5{0%,60%{transform:scaleX(.22)}68%,92%{transform:scaleX(.86)}100%{transform:scaleX(.22)}}
+
+/* s6 — T-3000 film */
+.t3v{aspect-ratio:16/10;width:100%;max-height:520px}
+.scr{position:absolute;inset:0;overflow:hidden;overflow:clip;--tt:1s}
+.t3v{overflow:clip!important}
+.scr.rs,.scr.rs *{transition:none!important}
+.g-wrap{position:absolute;inset:0;transform-origin:62.5% 36%;transition:transform 1.1s cubic-bezier(.6,0,.2,1),opacity .7s}
+.g-svg{width:100%;height:100%;display:block}
+.g-line{fill:none;stroke:url(#cg);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s ease}
+.scr.qa0 .g-line{stroke-dashoffset:0}
+.g-pt{opacity:0;transition:opacity .4s}
+.g-ring{fill:none;stroke:var(--acc);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:gring 1.4s ease-out infinite}
+@keyframes gring{from{transform:scale(.6);opacity:1}to{transform:scale(1.8);opacity:0}}
+.g-dot{fill:var(--acc);stroke:#fff;stroke-width:2}
+.scr.qa2 .g-wrap{transform:scale(1.6)}
+.scr.qa2 .g-pt{opacity:1}
+.a-cf{position:absolute;width:13%;aspect-ratio:1200/640;left:-22%;top:20%;perspective:400px;transition:left 1.1s cubic-bezier(.3,1.2,.5,1),top 1.1s,opacity .4s}
+.a-cf .cfrot{animation:cfspin 3.2s linear infinite}
+@keyframes cfspin{from{transform:rotateX(12deg) rotateY(0)}to{transform:rotateX(12deg) rotateY(360deg)}}
+.a-cf .cfrot .cfs{backface-visibility:visible}
+.scr.qa1 .a-cf{left:44%;top:16%}
+.scr.qa2 .a-cf{left:41%;top:12%}
+.scr.qc1 .a-cf{opacity:0}
+.cam{position:absolute;inset:0;transform-origin:0 50%;transition:transform 1s cubic-bezier(.6,0,.2,1)}
+.scr.qd1 .cam{transform:translateX(-92%) scale(1.6)}
+.scr.qd4 .cam{transform:none}
+.page{position:absolute;left:10%;right:10%;top:9%;bottom:9%;border-radius:14px;background:#f3f6f2;opacity:0;transform:scale(.04);transform-origin:66% 33%;transition:transform .9s cubic-bezier(.6,0,.2,1),opacity .5s;box-shadow:0 20px 40px -20px rgba(0,0,0,.9)}
+.scr.qc1 .page{opacity:1;transform:none}
+.scr.qc1 .g-wrap{transform:scale(16);opacity:0}
+.pg-in{position:absolute;inset:9% 8%;display:flex;flex-direction:column;justify-content:space-between}
+.ln{display:block;height:6%;width:var(--w);border-radius:4px;background:#b9c2bb;transition:transform .45s ease}
+.ln3,.ln4{background:#c8bdf7}
+.scr.qe1 .ln{transform:scaleX(0)}
+.ln0,.ln1,.ln2,.ln3{transform-origin:left}.ln4,.ln5,.ln6,.ln7{transform-origin:right;align-self:flex-end}
+.scr.qe2 .ln{transform:scaleX(1)}
+.scr.qe2 .ln0,.scr.qe2 .ln7{transition-delay:0s}.scr.qe2 .ln1,.scr.qe2 .ln6{transition-delay:.35s}.scr.qe2 .ln2,.scr.qe2 .ln5{transition-delay:.7s}.scr.qe2 .ln3,.scr.qe2 .ln4{transition-delay:1.05s}
+.scr.qe2 .ln3,.scr.qe2 .ln4{background:linear-gradient(90deg,#4be04a,#a8e84e)}
+.hl{position:absolute;left:-3%;right:-3%;top:34%;height:30%;border-radius:10px;border:2px solid var(--violet);background:rgba(156,134,240,.14);box-shadow:0 0 24px -6px rgba(156,134,240,.9);opacity:0;transform:scaleY(.4);transition:opacity .4s,transform .4s}
+.scr.qc2 .hl{opacity:1;transform:none}
+.scr.qe1 .hl{opacity:0}
+.a-t3{position:absolute;width:11%;left:118%;top:16%;transition:left 1s cubic-bezier(.3,1.2,.5,1),top 1s,transform .5s cubic-bezier(.6,0,.4,1),opacity .4s;z-index:3}
+.t3svg{display:block;width:100%;height:auto;overflow:visible;transform-origin:50% 80%}
+.t3svg .eyes{transform:translateX(-9px);transition:transform .4s}
+.scr.qb1 .a-t3{left:70%;top:14%}
+.scr.qb2 .t3svg{animation:nod .5s ease-in-out 2}
+@keyframes nod{50%{transform:rotate(-12deg) translateY(3px)}}
+.scr.qb3 .a-t3{left:57%;top:28%;transform:scale(0) rotate(-120deg);transition:left .5s ease-in,top .5s ease-in,transform .5s ease-in}
+.scr.qc2 .a-t3{left:79%;top:38%;transform:none;transition:left .9s cubic-bezier(.3,1.2,.5,1),top .9s,transform .7s cubic-bezier(.3,1.4,.5,1)}
+.scr.qe3 .t3svg .eyes{transform:none}
+.scr.qe3 .t3svg{animation:nod .45s ease-in-out .2s 2}
+.panels{position:absolute;right:4%;top:14%;width:38%;display:grid;gap:10px;z-index:4}
+.pn{display:flex;align-items:center;gap:10px;font:600 clamp(11px,1.5vw,14px) var(--f-body);padding:10px 12px;border-radius:12px;background:var(--panel);border:1px solid rgba(156,134,240,.45);box-shadow:0 10px 24px -12px rgba(0,0,0,.9);opacity:0;transform:translateX(24px);transition:opacity .35s,transform .45s cubic-bezier(.3,1.3,.5,1)}
+.pn .sp{width:14px;height:14px;border-radius:50%;border:2px solid rgba(156,134,240,.3);border-top-color:var(--violet);animation:spin .7s linear infinite;flex:none}
+.pn b{display:none;width:16px;height:16px;border-radius:50%;place-items:center;font-size:10px;color:#061407;background:var(--acc);flex:none}
+.scr.qd1 .pn1,.scr.qd2 .pn2,.scr.qd3 .pn3{opacity:1;transform:none}
+.scr.qd2 .pn1 .sp,.scr.qd3 .pn2 .sp,.scr.qd4 .pn3 .sp{display:none}
+.scr.qd2 .pn1 b,.scr.qd3 .pn2 b,.scr.qd4 .pn3 b{display:grid}
+.scr.qe1 .pn{opacity:0;transform:translateX(24px)}
+.conf{position:absolute;left:52%;top:48%;width:0;height:0;z-index:5}
+.conf i{position:absolute;width:10px;height:10px;border-radius:2px;background:var(--c);opacity:0}
+.scr.qe3 .conf i{animation:conf6 1.2s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes conf6{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(calc(var(--x)*2),calc(var(--y)*2)) rotate(300deg)}}
+.t3done{position:absolute;left:calc(79% + 8%);top:34%;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:800 14px var(--f-body);color:#061407;background:var(--acc);box-shadow:0 0 16px var(--acc);opacity:0;transform:scale(0);transition:transform .4s cubic-bezier(.3,1.6,.5,1),opacity .3s;z-index:5}
+.scr.qe3 .t3done{opacity:1;transform:none}
+@media (max-width:640px){.panels{width:44%;right:3%}.pn{padding:7px 8px;gap:6px}}
+@media (prefers-reduced-motion:reduce){.scr .page{opacity:1;transform:none}.scr .g-wrap{opacity:0}}
 </style>
 
 <div class="wrap">
@@ -325,25 +421,25 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 
     <section class="stage" id="s3">
       <span class="dot">03</span>
-      <div class="card">
+      <div class="card col">
         <div class="txt">
           <span class="tag"><b>Рост</b> · экономика</span>
           <h2>Маленькие покупки с геймификацией</h2>
-          <p>Внутренняя валюта, степы, устроена так, что удобнее всего докупать понемногу. В личном кабинете — задания и награды, как в игре: выполнил, получил степы, потратил на следующую долю. Человек остаётся на платформе дольше.</p>
         </div>
         <div class="viz vphone" role="img" aria-label="Личный кабинет: задания выполняются, на баланс начисляются степы">
           <div class="phone">
-            <div class="ph-bar"><span class="ph-t">Награды</span><span class="ph-bal"><i class="stc"></i><b id="phBal">124.0</b></span></div>
+            <div class="ph-bar"><span class="ph-t">Награды</span><span class="ph-bal"><i class="stc"></i><b id="phBal">3.42</b></span></div>
             <div class="ph-tabs"><span>Задания</span><b>Награды</b><span>Серии</span></div>
             <div class="tasks" id="tasks">
-              <div class="task done" data-r="0.1"><span class="tk-n">Посмотреть рекламу</span><span class="tk-r">+0.1</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
-              <div class="task" data-r="r"><span class="tk-n">Прочитать 3 доли</span><span class="tk-r">+5</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
-              <div class="task" data-r="r"><span class="tk-n">Серия 7 дней</span><span class="tk-r">+7</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
-              <div class="task" data-r="r"><span class="tk-n">Оценить историю</span><span class="tk-r">+3</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
+              <div class="task done" data-r="ad"><span class="tk-n">Посмотреть рекламу</span><span class="tk-r">+0.03</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
+              <div class="task" data-r="r"><span class="tk-n">Прочитать 3 доли</span><span class="tk-r">+0.15</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
+              <div class="task" data-r="r"><span class="tk-n">Серия 7 дней</span><span class="tk-r">+0.2</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
+              <div class="task" data-r="r"><span class="tk-n">Оценить историю</span><span class="tk-r">+0.08</span><span class="tk-b"><i></i></span><span class="tk-ok">✓</span></div>
             </div>
-            <div class="toast" id="phToast">Вам начислено <b>+5</b> <i class="stc"></i></div>
+            <div class="toast" id="phToast">Вам начислено <b>+0.15</b> <i class="stc"></i></div>
           </div>
         </div>
+        <div class="txt"><p>Внутренняя валюта, степы, устроена так, что удобнее всего докупать понемногу. В личном кабинете задания и награды, как в игре: выполнил — получил часть степа, накопил — открыл следующую долю. 1 степ ≈ 50 ₽: за просмотр рекламы начисляется от 0,03 до 0,1 степа, за задание — до 0,2 степа. Человек остаётся на платформе дольше.</p></div>
       </div>
     </section>
 
@@ -371,7 +467,7 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
       <div class="card">
         <div class="txt">
           <span class="tag"><b>ИИ</b> · маркетинговый инструмент</span>
-          <div class="cfhead"><span class="cfword">Клифф</span><span class="cf3d" aria-hidden="true"><span class="cfrot"><svg class="cfs l1" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg><svg class="cfs l0" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg></span></span></div>
+          <div class="cfhead big"><span class="cf3d" aria-hidden="true"><span class="cfrot"><svg class="cfs l1" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg><svg class="cfs l0" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg></span></span><span class="cfword">Клифф</span></div>
           <h2>Учится ставить паузу там, где покупают.</h2>
           <p>Изучает все материалы платформы: где автор поставил паузу и сколько людей докупили продолжение. Опираясь на тысячи таких кейсов, подсказывает желательную точку обрыва с самой высокой вероятностью конверсии.</p>
           <p>Мы растим агента, который понимает паттерны монетизации в сочетании с психологией. Он обучается на данных о том, что лучше всего продалось и в каких кейсах.</p>
@@ -379,13 +475,13 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
         <div class="viz" role="img" aria-label="Клифф перебирает точки обрыва и наводит прицел на ту, где конверсия выше">
           <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#a8e84e"/><stop offset="1" stop-color="#9c86f0"/></linearGradient></defs></svg>
           <div class="ai">
-            <span class="cf"><svg viewBox="0 0 1200 640" aria-hidden="true"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg>анализ кейсов</span>
-            <span class="cases" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="cases2" aria-hidden="true">анализ кейсов<span class="cases"><i></i><i></i><i></i><i></i><i></i></span></span>
             <svg class="curve" viewBox="-12 -24 424 156" aria-hidden="true">
               <path class="line" pathLength="1" d="M0 115 C40 110 70 70 100 55 C120 80 140 95 165 90 C200 82 215 40 245 22 C265 50 285 70 315 62 C345 55 360 35 400 30"/>
               <circle class="cand" cx="100" cy="55" r="5"/><circle class="cand k2" cx="165" cy="90" r="5"/><circle class="cand k3" cx="315" cy="62" r="5"/><circle class="cand k4" cx="400" cy="30" r="5"/>
               <g class="aim"><circle cx="245" cy="22" r="20"/><path d="M245 -4v12M245 36v12M219 22h12M259 22h12"/></g>
               <circle class="best" cx="245" cy="22" r="6"/>
+              <g class="cfm"><svg x="-28" y="-16" width="56" height="30" viewBox="0 0 1200 640" class="cfs"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg></g>
               <path class="tick" d="M241.5 22.2l2.4 2.4 4.6-5"/>
               <g class="pay"><path class="lnk" d="M251 28 L262 42"/><rect class="pbg" x="258" y="38" width="112" height="28" rx="14"/>
                 <g class="wl" transform="translate(268 45)"><rect x="0" y="1" width="16" height="12" rx="3"/><path d="M11 5.5h5v4h-5a2 2 0 010-4z"/></g>
@@ -402,20 +498,27 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 
     <section class="stage later" id="s6">
       <span class="dot">06</span>
-      <div class="card">
+      <div class="card col">
         <div class="txt">
           <span class="tag"><b>Новый продукт</b> · отдельный проект</span>
-          <h2>Супер-таргет-агент</h2>
-          <p>Агент с архитектурой из трёх модулей. Он встраивает рекламу любого продукта в контент так, будто она всегда была частью истории.</p>
-          <ul><li><b>Анализ контекста</b> — понимает сюжет, настроение и аудиторию в эту секунду.</li><li><b>Адаптация</b> — придумывает, как гармонично вписать оффер в произведение или ситуацию.</li><li><b>Генерация</b> — создаёт текст, видео или аудио, подстраиваясь под стиль и героев сюжета.</li></ul>
+          <h2>Т-3000</h2>
+          <p>ИИ-система, которая встраивает рекламу любого продукта в любой контент так, будто интеграция всегда была частью истории.</p>
         </div>
-        <div class="viz" role="img" aria-label="Контент проходит через анализ, адаптацию и генерацию и выходит со встроенным оффером">
-          <div class="pipe">
-            <span class="io in">Контент</span>
-            <div class="mods"><span class="mod m1"><i>01</i>Анализ контекста</span><span class="mod m2"><i>02</i>Адаптация</span><span class="mod m3"><i>03</i>Генерация<em>текст · видео · аудио</em></span></div>
-            <span class="io out">Контент <b>+ оффер</b></span>
-            <i class="flow"></i>
+        <div class="viz t3v" role="img" aria-label="Клифф находит точку на графике, Т-3000 ныряет в неё, анализирует, адаптирует и генерирует интеграцию прямо в текст">
+          <div class="scr" id="t3scr">
+            <div class="g-wrap">
+              <svg class="g-svg" viewBox="0 0 400 250" aria-hidden="true"><path class="g-line" pathLength="1" d="M10 220 C60 210 90 150 130 135 C160 150 180 175 205 168 C230 160 235 110 250 90 C270 120 290 150 320 140 C350 130 365 105 392 98"/><g class="g-pt"><circle cx="250" cy="90" r="16" class="g-ring"/><circle cx="250" cy="90" r="6" class="g-dot"/></g></svg>
+            </div>
+            <span class="a-cf"><span class="cfrot spin"><svg class="cfs l1" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg><svg class="cfs l0" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg></span></span>
+            <div class="cam"><div class="page"><div class="pg-in"><i class="ln ln0" style="--w:92%"></i><i class="ln ln1" style="--w:86%"></i><i class="ln ln2" style="--w:95%"></i><i class="ln ln3" style="--w:78%"></i><i class="ln ln4" style="--w:90%"></i><i class="ln ln5" style="--w:84%"></i><i class="ln ln6" style="--w:96%"></i><i class="ln ln7" style="--w:70%"></i><span class="hl"></span></div></div>
+            <span class="a-t3"><svg class="t3svg" viewBox="0 0 120 130" aria-hidden="true"><defs><linearGradient id="t3g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7ccff"/><stop offset=".55" stop-color="#9c86f0"/><stop offset="1" stop-color="#5b45c4"/></linearGradient></defs><line x1="60" y1="6" x2="60" y2="22" stroke="#c9b8ff" stroke-width="4" stroke-linecap="round"/><circle cx="60" cy="6" r="6" fill="#4be04a"/><rect x="14" y="22" width="92" height="74" rx="26" fill="url(#t3g)"/><rect class="vis" x="24" y="40" width="72" height="30" rx="15" fill="#140f24"/><g class="eyes"><circle cx="46" cy="55" r="6" fill="#4be04a"/><circle cx="74" cy="55" r="6" fill="#4be04a"/></g><rect x="38" y="98" width="44" height="22" rx="10" fill="url(#t3g)"/><text x="60" y="114" text-anchor="middle" font-size="12" font-weight="800" fill="#140f24" font-family="JetBrains Mono,monospace">T-3000</text></svg></span></div>
+            <div class="panels"><span class="pn pn1"><i class="sp"></i><b>✓</b>Анализ контекста</span><span class="pn pn2"><i class="sp"></i><b>✓</b>Адаптация</span><span class="pn pn3"><i class="sp"></i><b>✓</b>Генерация</span></div>
+            <span class="conf"><i style="--x:-70px;--y:-40px;--c:#4be04a"></i><i style="--x:60px;--y:-50px;--c:#f2dc5d"></i><i style="--x:80px;--y:10px;--c:#9c86f0"></i><i style="--x:-80px;--y:20px;--c:#ff5c82"></i><i style="--x:-30px;--y:-60px;--c:#a8e84e"></i><i style="--x:30px;--y:50px;--c:#4be04a"></i><i style="--x:-50px;--y:50px;--c:#f2dc5d"></i><i style="--x:70px;--y:-20px;--c:#a8e84e"></i><i style="--x:0px;--y:-70px;--c:#9c86f0"></i><i style="--x:-90px;--y:-10px;--c:#4be04a"></i></span>
+            <span class="t3done">✓</span>
           </div>
+        </div>
+        <div class="txt">
+          <ul><li><b>Анализ контекста</b> — понимает сюжет, настроение и аудиторию в эту секунду.</li><li><b>Адаптация</b> — придумывает, как гармонично вписать оффер в произведение или ситуацию.</li><li><b>Генерация</b> — создаёт текст, видео или аудио, подстраиваясь под стиль и героев сюжета.</li></ul>
         </div>
       </div>
     </section>
@@ -436,24 +539,37 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 
 <script>
 (function(){
-  var tasks=[].slice.call(document.querySelectorAll('#tasks .task')),bal=document.getElementById('phBal'),wrap=bal.parentNode,toast=document.getElementById('phToast'),v=124.0,i=1;
+  var tasks=[].slice.call(document.querySelectorAll('#tasks .task')),bal=document.getElementById('phBal'),wrap=bal.parentNode,toast=document.getElementById('phToast'),v=3.42,i=1;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function rnd(){return 1+Math.floor(Math.random()*10);}
-  tasks.forEach(function(t){if(t.dataset.r==='r'){var r=rnd();t.dataset.v=r;t.querySelector('.tk-r').textContent='+'+r;}else{t.dataset.v=0.1;}if(t.classList.contains('done'))t.querySelector('.tk-b i').style.setProperty('--v',1);});
+  function rnd(){return (5+Math.floor(Math.random()*16))/100;}function rad(){return (3+Math.floor(Math.random()*8))/100;}
+  tasks.forEach(function(t){var r=t.dataset.r==='r'?rnd():rad();t.dataset.v=r;t.querySelector('.tk-r').textContent='+'+r.toFixed(2);if(t.classList.contains('done'))t.querySelector('.tk-b i').style.setProperty('--v',1);});
   function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
   async function step(){
     var t=tasks[i],bar=t.querySelector('.tk-b i');
     t.classList.add('active');bar.style.setProperty('--d','1.6s');bar.style.setProperty('--v',1);await sleep(1700);
     t.classList.remove('active');t.classList.add('done');
-    var r=parseFloat(t.dataset.v);toast.querySelector('b').textContent='+'+(r<1?r.toFixed(1):r);toast.classList.add('on');
-    var from=v,to=v+r,t0=performance.now();(function tick(n){var k=Math.min(1,(n-t0)/600);bal.textContent=(from+(to-from)*k).toFixed(1);if(k<1)requestAnimationFrame(tick);})(t0);
+    var r=parseFloat(t.dataset.v);toast.querySelector('b').textContent='+'+r.toFixed(2);toast.classList.add('on');
+    var from=v,to=v+r,t0=performance.now();(function tick(n){var k=Math.min(1,(n-t0)/600);bal.textContent=(from+(to-from)*k).toFixed(2);if(k<1)requestAnimationFrame(tick);})(t0);
     v=to;wrap.classList.remove('up');void wrap.offsetWidth;wrap.classList.add('up');
     await sleep(1300);toast.classList.remove('on');await sleep(400);
-    tasks.forEach(function(o){if(o===t)return;o.classList.remove('done');var ob=o.querySelector('.tk-b i');ob.style.setProperty('--d','0s');ob.style.setProperty('--v',0);if(o.dataset.r==='r'){var rr=rnd();o.dataset.v=rr;o.querySelector('.tk-r').textContent='+'+rr;}});
+    tasks.forEach(function(o){if(o===t)return;o.classList.remove('done');var ob=o.querySelector('.tk-b i');ob.style.setProperty('--d','0s');ob.style.setProperty('--v',0);var rr=o.dataset.r==='r'?rnd():rad();o.dataset.v=rr;o.querySelector('.tk-r').textContent='+'+rr.toFixed(2);});
     i=(i+1)%tasks.length;
     await sleep(350);
   }
   if(!reduce)(async function(){await sleep(600);for(;;)await step();})();
+})();
+</script>
+
+<script>
+(function(){
+  var scr=document.getElementById('t3scr');if(!scr)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){scr.className='scr qc1 qc2';return;}
+  var T=[[200,'qa0'],[1500,'qa1'],[2700,'qa2'],[3700,'qb1'],[4900,'qb2'],[6000,'qb3'],[6600,'qc1'],[7500,'qc2'],[8600,'qd1'],[9800,'qd2'],[11000,'qd3'],[12200,'qd4'],[12900,'qe1'],[13500,'qe2'],[15300,'qe3']],END=17800;
+  var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:.1}).observe(scr);
+  function run(){scr.className='scr rs';void scr.offsetWidth;scr.className='scr';
+    T.forEach(function(s){setTimeout(function(){scr.classList.add(s[1]);},s[0]);});
+    setTimeout(function wait(){if(vis)run();else setTimeout(wait,500);},END);}
+  run();
 })();
 </script>
 
