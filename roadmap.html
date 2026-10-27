@@ -246,6 +246,31 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 .pay .lk .sh{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;transform-box:fill-box;transform-origin:right bottom;animation:shk 7s infinite}
 @keyframes shk{0%,89%{transform:rotate(0)}92%,96%{transform:rotate(-28deg) translate(-1px,-1px)}100%{transform:rotate(0)}}
 .ai .meter{bottom:14px!important}
+
+/* v4 — 10s cycle, longer payment */
+.ai .line{animation:draw4 10s ease-in-out infinite!important}
+@keyframes draw4{0%{stroke-dashoffset:1}28%,100%{stroke-dashoffset:0}}
+.ai .cand{animation:cand4 10s infinite!important}
+@keyframes cand4{0%,28%{opacity:0}32%,48%{opacity:1}54%,100%{opacity:.25}}
+.aim{animation:aim4 10s cubic-bezier(.2,.8,.2,1) infinite!important}
+@keyframes aim4{0%,43%{opacity:0;transform:scale(2.6) rotate(-40deg);filter:blur(6px)}50%{opacity:1;transform:scale(1.15) rotate(0);filter:blur(0)}56%{opacity:1;transform:scale(.62) rotate(45deg)}60%,100%{opacity:0;transform:scale(.62) rotate(45deg)}}
+.ai .best{animation:best4 10s infinite!important}
+@keyframes best4{0%,55%{opacity:0;transform:scale(.3)}58%{opacity:1;transform:scale(1.4)}60%,90%{opacity:1;transform:scale(1)}88%{transform:scale(1.5)}94%,100%{opacity:0;transform:scale(1)}}
+.tick{animation:tick4 10s infinite!important}
+@keyframes tick4{0%,57%{opacity:0}59%,90%{opacity:1}94%,100%{opacity:0}}
+.pay{transform-box:view-box!important;transform-origin:245px 22px!important;animation:pay4 10s cubic-bezier(.34,1.3,.64,1) infinite!important}
+@keyframes pay4{0%,58%{opacity:0;transform:scale(.2)}62%,80%{opacity:1;transform:scale(1)}88%{opacity:.9;transform:scale(.04)}89%,100%{opacity:0;transform:scale(0)}}
+.pay .pbg{fill:#1d2a20;stroke:var(--acc);stroke-width:1.5}
+.pay text{font:800 15px var(--f-mono);fill:var(--ink)}
+.pay .lk rect{fill:none;stroke:var(--gold);stroke-width:1.8}
+.pay .lk .sh{fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;transform-box:fill-box;transform-origin:center bottom;animation:shut 10s infinite!important}
+@keyframes shut{0%,63%{transform:translateY(-3px) rotate(-22deg)}68%,100%{transform:translateY(0) rotate(0)}}
+.pay .lk{animation:lkfade 10s infinite}
+@keyframes lkfade{0%,70%{opacity:1}73%,100%{opacity:0}}
+.pay .ok{fill:none;stroke:var(--acc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:16;stroke-dashoffset:16;animation:okd 10s infinite}
+@keyframes okd{0%,72%{stroke-dashoffset:16}76%,100%{stroke-dashoffset:0}}
+.ai .meter i{animation:meter4 10s ease-in-out infinite!important}
+@keyframes meter4{0%,58%{transform:scaleX(.22)}66%,92%{transform:scaleX(.86)}100%{transform:scaleX(.22)}}
 </style>
 
 <div class="wrap">
@@ -362,10 +387,11 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
               <g class="aim"><circle cx="245" cy="22" r="20"/><path d="M245 -4v12M245 36v12M219 22h12M259 22h12"/></g>
               <circle class="best" cx="245" cy="22" r="6"/>
               <path class="tick" d="M241.5 22.2l2.4 2.4 4.6-5"/>
-              <g class="pay"><path class="lnk" d="M251 28 L262 42"/><rect x="258" y="38" width="118" height="28" rx="14"/>
+              <g class="pay"><path class="lnk" d="M251 28 L262 42"/><rect class="pbg" x="258" y="38" width="112" height="28" rx="14"/>
                 <g class="wl" transform="translate(268 45)"><rect x="0" y="1" width="16" height="12" rx="3"/><path d="M11 5.5h5v4h-5a2 2 0 010-4z"/></g>
-                <text x="292" y="57">+49 ₽</text>
-                <g class="lk" transform="translate(344 43)"><rect x="0" y="7" width="13" height="10" rx="2.5"/><path class="sh" d="M3 7V4.5a3.5 3.5 0 016.8-1.2"/></g>
+                <text x="292" y="57">49 ₽</text>
+                <g class="lk" transform="translate(340 42)"><rect x="0" y="8" width="14" height="11" rx="3"/><path class="sh" d="M3.5 8V5.5a3.5 3.5 0 017 0V8"/></g>
+                <path class="ok" d="M341 53.5l4 4 7.5-8"/>
               </g>
             </svg>
             <div class="meter"><span>конверсия в докупку</span><span class="m"><i></i></span><b>↑</b></div>
