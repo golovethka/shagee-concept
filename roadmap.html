@@ -590,7 +590,7 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 (function(){
   var scr=document.getElementById('t3scr');if(!scr)return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){scr.className='scr qc1 qc2';return;}
-  var T=[[200,'qa0'],[1500,'qa1'],[2700,'qa2'],[5000,'qb1'],[6000,'qb2'],[7000,'qb3'],[7600,'qc1'],[8500,'qc2'],[9400,'qd1'],[11000,'qd2'],[12300,'qd3'],[13300,'qd4'],[15300,'qd5'],[15700,'qe3']],END=18400;
+  var T=[[200,'qa0'],[1500,'qa1'],[2700,'qb1'],[3900,'qa2'],[6300,'qb2'],[7300,'qb3'],[7900,'qc1'],[8800,'qc2'],[9700,'qd1'],[11300,'qd2'],[12600,'qd3'],[13600,'qd4'],[15600,'qd5'],[16000,'qe3']],END=18700;
   var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:.1}).observe(scr);
   function run(){scr.className='scr rs';void scr.offsetWidth;scr.className='scr';
     T.forEach(function(s){setTimeout(function(){scr.classList.add(s[1]);},s[0]);});
