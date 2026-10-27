@@ -232,6 +232,20 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
 .flow::after{content:"";position:absolute;left:50%;top:0;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);animation:fl 6s linear infinite}
 @keyframes fl{0%{top:0;opacity:1}80%{top:100%;opacity:1}81%,100%{top:100%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.aim{opacity:1;transform:scale(.62)}.best{opacity:1}}
+
+/* v3 — lock pay */
+.tick{fill:none;stroke:#061407;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0;animation:tick 7s infinite}
+@keyframes tick{0%,83%{opacity:0}86%,96%{opacity:1}100%{opacity:0}}
+.pay{opacity:0;animation:pay 7s cubic-bezier(.34,1.56,.64,1) infinite;transform-box:fill-box;transform-origin:left top}
+@keyframes pay{0%,85%{opacity:0;transform:scale(.6) translate(-8px,-8px)}89%,96%{opacity:1;transform:none}100%{opacity:0}}
+.pay rect{fill:#1d2a20;stroke:var(--acc);stroke-width:1.5}
+.pay .lnk{fill:none;stroke:var(--acc);stroke-width:1.5;stroke-dasharray:3 3}
+.pay .wl rect,.pay .wl path{fill:none;stroke:var(--acc2);stroke-width:1.6;stroke-linejoin:round}
+.pay text{font:800 15px var(--f-mono);fill:var(--ink)}
+.pay .lk rect{fill:var(--gold);stroke:none}
+.pay .lk .sh{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;transform-box:fill-box;transform-origin:right bottom;animation:shk 7s infinite}
+@keyframes shk{0%,89%{transform:rotate(0)}92%,96%{transform:rotate(-28deg) translate(-1px,-1px)}100%{transform:rotate(0)}}
+.ai .meter{bottom:14px!important}
 </style>
 
 <div class="wrap">
@@ -334,19 +348,25 @@ h2{font:700 clamp(22px,2.8vw,30px)/1.15 var(--f-display);letter-spacing:-.025em;
           <span class="tag"><b>ИИ</b> · маркетинговый инструмент</span>
           <div class="cfhead"><span class="cfword">Клифф</span><span class="cf3d" aria-hidden="true"><span class="cfrot"><svg class="cfs l1" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg><svg class="cfs l0" viewBox="0 0 1200 640"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg></span></span></div>
           <h2>Учится ставить паузу там, где покупают.</h2>
-          <p>Изучает все материалы платформы: где автор поставил паузу и сколько людей докупили продолжение. На тысячах таких кейсов подсказывает точку обрыва с самой высокой конверсией.</p>
-          <p>В перспективе это агент, который понимает паттерны монетизации: он обучается на данных о том, что лучше всего продаётся, в самых разных кейсах.</p>
+          <p>Изучает все материалы платформы: где автор поставил паузу и сколько людей докупили продолжение. Опираясь на тысячи таких кейсов, подсказывает желательную точку обрыва с самой высокой вероятностью конверсии.</p>
+          <p>Мы растим агента, который понимает паттерны монетизации в сочетании с психологией. Он обучается на данных о том, что лучше всего продалось и в каких кейсах.</p>
         </div>
         <div class="viz" role="img" aria-label="Клифф перебирает точки обрыва и наводит прицел на ту, где конверсия выше">
           <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#a8e84e"/><stop offset="1" stop-color="#9c86f0"/></linearGradient></defs></svg>
           <div class="ai">
             <span class="cf"><svg viewBox="0 0 1200 640" aria-hidden="true"><path class="cf-t cf-l" d="M121 574 L374 321 L374 574Z"/><path class="cf-t cf-r" d="M826 321 L1079 574 L826 574Z"/><g class="cf-eyes"><rect class="cf-e" x="506" y="26" width="64" height="262" rx="32"/><rect class="cf-e" x="630" y="26" width="64" height="262" rx="32"/></g><text class="cf-d" x="600" y="606">$</text></svg>анализ кейсов</span>
             <span class="cases" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-            <svg class="curve" viewBox="-12 -24 424 152" aria-hidden="true">
+            <svg class="curve" viewBox="-12 -24 424 156" aria-hidden="true">
               <path class="line" pathLength="1" d="M0 115 C40 110 70 70 100 55 C120 80 140 95 165 90 C200 82 215 40 245 22 C265 50 285 70 315 62 C345 55 360 35 400 30"/>
               <circle class="cand" cx="100" cy="55" r="5"/><circle class="cand k2" cx="165" cy="90" r="5"/><circle class="cand k3" cx="315" cy="62" r="5"/><circle class="cand k4" cx="400" cy="30" r="5"/>
               <g class="aim"><circle cx="245" cy="22" r="20"/><path d="M245 -4v12M245 36v12M219 22h12M259 22h12"/></g>
               <circle class="best" cx="245" cy="22" r="6"/>
+              <path class="tick" d="M241.5 22.2l2.4 2.4 4.6-5"/>
+              <g class="pay"><path class="lnk" d="M251 28 L262 42"/><rect x="258" y="38" width="118" height="28" rx="14"/>
+                <g class="wl" transform="translate(268 45)"><rect x="0" y="1" width="16" height="12" rx="3"/><path d="M11 5.5h5v4h-5a2 2 0 010-4z"/></g>
+                <text x="292" y="57">+49 ₽</text>
+                <g class="lk" transform="translate(344 43)"><rect x="0" y="7" width="13" height="10" rx="2.5"/><path class="sh" d="M3 7V4.5a3.5 3.5 0 016.8-1.2"/></g>
+              </g>
             </svg>
             <div class="meter"><span>конверсия в докупку</span><span class="m"><i></i></span><b>↑</b></div>
           </div>
